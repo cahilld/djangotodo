@@ -51,3 +51,18 @@ ctrl+c
 python3 manage.py startapp todoitem
 
 class Todoitem(models.model)
+
+<!--update DB-->
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+url to views
+
+<!--template into view in views.py-->
+def get_index(request):
+    return render(request, "index.html")
+    
+data into view
+
+send to display
+
