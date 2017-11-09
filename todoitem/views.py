@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import TodoItem
 from .forms import TodoItemForm
 
@@ -20,3 +20,8 @@ def add_item(request):
         form = TodoItemForm()    
     
     return render(request, "item_form.html", { 'form': form })
+    
+def edit_item(request, id):
+    item = get_object_or_404(TodoItem, pk=id)
+    form=TodoItemForm()
+    return render(request, "item_form.html", {"form":form, "the_item":item})
