@@ -33,3 +33,12 @@ def edit_item(request, id):
         form = TodoItemForm(instance=item)
     
     return render(request, "item_form.html", {"form":form})
+    
+def toggle_item(request, id):
+    item = get_object_or_404(TodoItem, pk=id)
+    
+    item.done = not item.done
+       
+    item.save()
+    
+    return redirect(get_index)
