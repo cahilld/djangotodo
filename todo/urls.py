@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'add$', add_item,),
     url(r'^edit/(\d+)$', edit_item),
     url(r'^toggle/(\d+)$', toggle_item),
+    
 ]

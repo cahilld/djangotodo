@@ -36,9 +36,6 @@ def edit_item(request, id):
     
 def toggle_item(request, id):
     item = get_object_or_404(TodoItem, pk=id)
-    
     item.done = not item.done
-       
     item.save()
-    
     return redirect(get_index)
